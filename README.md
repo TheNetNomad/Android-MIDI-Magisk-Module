@@ -1,0 +1,5 @@
+## Enable MIDI API Magisk Module
+Starting with version 13, Android has native MIDI capabilities. These are enabled in two steps (I think)- by compiling the kernel with the right flag set, and then enabling it with an entry in /system/etc/permissions. You can check to see if the first step was done (I think) by checking for libamidi.so. If that's there, but the permissions xml isn't, this Magisk  trick will finish the job.
+
+# But what if I don't even have libamidi.so?
+My knowledge of Android internals starts and ends with what you've already read, but I'd hazard a guess creating a Magisk module to do the same thing would work. All you'd have to do is create a lib64 directory in this module, add libamidi.so, and add "system/lib64" to config.sh around line 77- look at the example above it to see how to override multiple directories. The kicker is that libamidi.so is a dynamic linklib, so you'll need to compile it yourself or find a binary compiled for the same architecture as your device. Again, wild guessing here, for all I know trying this would brick your device and light you on fire.  

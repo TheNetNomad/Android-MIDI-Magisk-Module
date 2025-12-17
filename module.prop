@@ -1,0 +1,7 @@
+id=midienable
+name=Enable MIDI Api
+version=v1
+versionCode=1
+author=_NetNomad
+description=Enable OTG MIDI functionality on Android 13+ 
+template=3
